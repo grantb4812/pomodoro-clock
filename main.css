@@ -1,0 +1,31 @@
+.jumbotron {
+  color: white;
+  background-color: #2C3539;
+}
+
+.main-row li {
+  display: inline-block;
+  margin: 1em;
+}
+
+.increment li {
+  display: inline-block;
+}
+
+.timer {
+  border: 2px solid white;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
+  padding-top: 20%;
+}
+
+.decrease-button,
+.increase-button,
+.timer {
+  cursor: pointer;
+}
+
+
+
