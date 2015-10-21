@@ -1,24 +1,34 @@
 $(document).ready(function(){
-  $('.break-increase-button').on('click', function(){
-    increase();
-  });
-  $('.break-decrease-button').on('click', function(){
-    decrease();
-  });
+  increase();
 });
 
-var breakIncreaseNum = 0;
-console.log(breakIncreaseNum);
-var increase = function() {
-  breakIncreaseNum += 1;
-  $('.break-length').replaceWith('<span class="break-length">'+breakIncreaseNum+'</span>')
-  return breakIncreaseNum;
-};
+// this increases / decrease individual 
+/*
+var counter = 0;
+var increaseDecrease = function () {
+  $('.break-increase-button').on('click', function(){
+      counter += 1;
+      $('.break-length').replaceWith('<span class="break-length">'+counter+'</span>');
+  });
 
-console.log(breakIncreaseNum);
-var breakDecreaseNum = breakIncreaseNum;
-var decrease = function() {
-  breakDecreaseNum -= 1;
-  $('.break-length').replaceWith('<span class="break-length">'+breakDecreaseNum+'</span>')
-  console.log(breakDecreaseNum);
-}; 
+  $('.break-decrease-button').on('click', function(){
+      if (counter > 0) {
+      counter -= 1;
+      $('.break-length').replaceWith('<span class="break-length">'+counter+'</span>');
+      }
+  }); 
+};
+*/
+// working on code that increase / decrease but not specific
+
+var increase = function() {
+  var counter = 0;
+  $('.increase').click(function(){
+      $(this).click(function(){
+          counter += 1;
+          $(this).prev().replaceWith('<span class="break-length">'+counter+'</span>');
+        });
+      });
+  
+ 
+};

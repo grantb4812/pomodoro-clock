@@ -1,4 +1,4 @@
-.jumbotron {
+body {
   color: white;
   background-color: #2C3539;
 }
@@ -21,8 +21,10 @@
   padding-top: 20%;
 }
 
-.decrease-button,
-.increase-button,
+.session-decrease-button,
+.session-increase-button,
+.break-increase-button,
+.break-decrease-button,
 .timer {
   cursor: pointer;
 }
