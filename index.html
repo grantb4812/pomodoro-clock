@@ -11,37 +11,24 @@
 	<script src="app.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1 class="text-center">Pomodoro Clock</h1>
-    <div class="row text-center session">
-      <ul class="main-row">
-        <li>
-        <div class="break">
-          <p>Break Length</p>
-          <ul class="increment">
-            <li class="decrease"><p>-</p></li>
-            <li><span class="length">0</span></li>
-            <li class="increase"><p>+</p></li>
-          </ul>  
-        </div>
-        </li>
-        <li>
-        <div class="break">
-          <p>Session Length</p>
-          <ul class="increment">
-            <li class="decrease"><p>-</p></li>
-            <li><span class="length">0</span></li>
-            <li class="increase"><p>+</p></li>
-          </ul>
-        </div>
-        </li>
-      </ul>
-    </div>
-    <div class="row text-center">
-      <div class="timer">
-        <span>10</span>
-      </div>
-    </div>
-   </div>
+  <h1>Pomodoro Clock</h1>
+  <form action="">
+    <label for="name">Break Length</label>
+    <input readonly="readonly" type="text" name="break-length" id="break-length" value="0">
+    <button type="button">-</button>
+    <button type="button">+</button>
+  </form>
+    <form action="">
+    <label for="name">Session Length</label>
+    <input readonly="readonly" type="text" name="session-length" id="session-length" value="0">
+    <button type="button">-</button>
+    <button type="button">+</button>
+  </form>
+
+  <div  class="countdown">
+    <p>10</p>
+  </div>
+
+  <button type="button" class="countdown-button">Start</button>
 </body>
 </html>

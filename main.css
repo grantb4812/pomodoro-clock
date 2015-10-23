@@ -1,33 +1,38 @@
 body {
   color: white;
   background-color: #2C3539;
+  text-align: center;
 }
 
-.main-row li {
-  display: inline-block;
-  margin: 1em;
+input {
+  color: black;
+  width: 2em;
+  text-align: center;
 }
 
-.increment li {
-  display: inline-block;
+button {
+  color: black;
+  width: 2em;
+  height: 2em;
+  border: 1px solid black;
+  border-radius: 50%;
+
 }
 
-.timer {
+.countdown {
+  height: 20em;
+  width: 20em;
   border: 2px solid white;
   border-radius: 50%;
-  height: 300px;
-  width: 300px;
   margin: 0 auto;
-  padding-top: 20%;
 }
 
-.session-decrease-button,
-.session-increase-button,
-.break-increase-button,
-.break-decrease-button,
-.timer {
-  cursor: pointer;
+.countdown p{
+  position: relative;
+  top: 45%;
+  
 }
 
-
-
+.countdown-button {
+  width: 5em;
+}
