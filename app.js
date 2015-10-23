@@ -1,5 +1,6 @@
 $(document).ready(function(){
     counter();
+    start();
 });
 
 // this increases / decrease individual 
@@ -44,3 +45,19 @@ var counter = function() {
   });
 
 }; 
+
+var start = function () {
+
+    $('.countdown-button').on('click', function (){
+ 
+       setInterval(function(){
+        var countdown = parseInt($('.countdown').text());
+        var newCountdown = countdown - 1;
+        $('.countdown p').text(newCountdown);
+       }, 10000)
+      
+    });
+
+
+
+};
