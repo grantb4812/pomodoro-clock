@@ -1,26 +1,7 @@
 $(document).ready(function(){
     counter();
-    start();
+    sessionTimer();
 });
-
-// this increases / decrease individual 
-/*
-var counter = 0;
-var increaseDecrease = function () {
-  $('.break-increase-button').on('click', function(){
-      counter += 1;
-      $('.break-length').replaceWith('<span class="break-length">'+counter+'</span>');
-  });
-
-  $('.break-decrease-button').on('click', function(){
-      if (counter > 0) {
-      counter -= 1;
-      $('.break-length').replaceWith('<span class="break-length">'+counter+'</span>');
-      }
-  }); 
-};
-*/
-// working on code that increase / decrease but not specific
 
 var counter = function() {
   
@@ -37,27 +18,27 @@ var counter = function() {
     }
 
     $(this).parent().find('input').val(newValue);
+   
     
     if ($(this).parent().find('input').attr('id') == 'session-length') {
       $('.countdown').children().text(newValue);
-    }
-    
+     
+    } 
+
   });
 
 }; 
 
-var start = function () {
+var sessionTimer = function () {
 
     $('.countdown-button').on('click', function (){
- 
-       setInterval(function(){
-        var countdown = parseInt($('.countdown').text());
-        var newCountdown = countdown - 1;
-        $('.countdown p').text(newCountdown);
-       }, 10000)
-      
+        var sessionTimer = setInterval(function(){
+          var countdown = parseInt($('.countdown').text());
+             var newCountdown = countdown - 1;
+              $('.countdown p').text(newCountdown);
+              if (newCountdown == 0) {
+               clearInterval(sessionTimer); 
+             }
+        }, 1000)
     });
-
-
-
 };
