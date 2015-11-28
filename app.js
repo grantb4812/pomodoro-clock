@@ -4,8 +4,15 @@ $(document).ready(function(){
 });
 
 var counter = function() {
+
+  var countdown = parseInt($('#session-length').val());
+  $('.session-timer').text(countdown);
+
+  var breakCount = parseInt($('#break-length').val());
+  $('.break-timer').text(breakCount);
+
   
-  $('button').on('click', function(){
+  $('.button').on('click', function(){
 
     var oldValue = parseInt($(this).parent().find('input').val());
     
@@ -21,10 +28,13 @@ var counter = function() {
    
     
     if ($(this).parent().find('input').attr('id') == 'session-length') {
-      $('.countdown').children().text(newValue);
+      $('.session-timer').text(newValue);
      
-    } 
-
+    } else if ($(this).parent().find('input').attr('id') == 'break-length') {
+      $('.break-timer').text(newValue);
+     
+      } 
+    
   });
 
 }; 
@@ -32,13 +42,31 @@ var counter = function() {
 var sessionTimer = function () {
 
     $('.countdown-button').on('click', function (){
+        
         var sessionTimer = setInterval(function(){
-          var countdown = parseInt($('.countdown').text());
+             var countdown = parseInt($('.session-timer').text());
              var newCountdown = countdown - 1;
-              $('.countdown p').text(newCountdown);
+              $('.session-timer').text(newCountdown);
               if (newCountdown == 0) {
-               clearInterval(sessionTimer); 
-             }
+                clearInterval(sessionTimer);
+                secondCount();
+              }   
         }, 1000)
+
+        
+        
     });
+};
+
+var secondCount = function () {
+    
+    var breakCount = setInterval(function(){
+    var breakDown = parseInt($('.break-timer').text());
+                var newBreak = breakDown - 1;
+                $('.break-timer').text(newBreak);
+                if(newBreak == 0) {
+                  clearInterval(breakCount);
+                }
+      }, 1000);
+    
 };

@@ -14,19 +14,22 @@
   <h1>Pomodoro Clock</h1>
   <form action="">
     <label for="name">Break Length</label>
-    <input readonly="readonly" type="text" name="break-length" id="break-length" value="0">
-    <button type="button">-</button>
-    <button type="button">+</button>
+    <input readonly="readonly" type="text" name="break-length" id="break-length" value="5">
+    <button class="button" type="button">-</button>
+    <button class="button" type="button">+</button>
   </form>
     <form action="">
     <label for="name">Session Length</label>
-    <input readonly="readonly" type="text" name="session-length" id="session-length" value="0">
-    <button type="button">-</button>
-    <button type="button">+</button>
+    <input readonly="readonly" type="text" name="session-length" id="session-length" value="25">
+    <button class="button" type="button">-</button>
+    <button class="button" type="button">+</button>
   </form>
 
   <div  class="countdown">
-    <p>0</p>
+    <p>Session:</p>
+    <p class="session-timer"></p>
+    <p>Break:</p>
+    <p class="break-timer"></p>
   </div>
 
   <button type="button" class="countdown-button">Start</button>
